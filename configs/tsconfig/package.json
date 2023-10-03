@@ -1,6 +1,6 @@
 {
   "name": "op-tsconfig",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "OP: TypeScript configuration",
   "main": "src/tsconfig.json",
   "files": [

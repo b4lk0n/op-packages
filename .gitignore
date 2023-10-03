@@ -16,3 +16,4 @@ tsconfig.tsbuildinfo
 .pnpm-debug.log*
 .env*
 !.env.example
+.npmrc

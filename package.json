@@ -8,6 +8,7 @@
     "build": "turbo run build"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.26.2",
     "eslint": "^8.49.0",
     "eslint-config-op": "workspace:^",
     "op-prettier-config": "workspace:^",
