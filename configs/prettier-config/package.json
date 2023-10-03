@@ -1,0 +1,21 @@
+{
+  "name": "op-prettier-config",
+  "version": "0.1.0",
+  "description": "OP: Prettier config",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "prettier",
+    "config"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/b4lk0n/op-packages.git"
+  }
+}

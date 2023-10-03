@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "OP: TSConfig",
+
+  "compilerOptions": {
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "allowUmdGlobalAccess": false,
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "newLine": "lf",
+    "removeComments": true,
+    "allowJs": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "target": "esnext",
+    "skipLibCheck": true,
+    "composite": false,
+    "incremental": false,
+    "declaration": true
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "op-packages",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "build": "turbo run build"
+  },
+  "devDependencies": {
+    "eslint": "^8.49.0",
+    "eslint-config-op": "workspace:^",
+    "op-prettier-config": "workspace:^",
+    "prettier": "^3.0.3",
+    "turbo": "^1.10.14"
+  }
+}

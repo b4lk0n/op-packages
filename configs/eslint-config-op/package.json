@@ -1,0 +1,47 @@
+{
+  "name": "eslint-config-op",
+  "version": "0.1.0",
+  "description": "OP: ESLint configuration",
+  "main": "./src/base.js",
+  "exports": {
+    ".": "./src/base.js",
+    "./next": "./src/next.js"
+  },
+  "files": [
+    "src/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/b4lk0n/eslint-config-noop.git"
+  },
+  "scripts": {
+    "lint": "eslint src --ext .js"
+  },
+  "license": "MIT",
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "noop"
+  ],
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "@typescript-eslint/parser": "^6.7.0",
+    "eslint-config-next": "^13.4.19",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-import-resolver-node": "^0.3.9",
+    "eslint-import-resolver-typescript": "^3.6.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-vitest": "^0.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.49.0",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.5"
+  },
+  "peerDependencies": {
+    "eslint": "^8.49.0",
+    "vitest": "^0.34.5"
+  }
+}

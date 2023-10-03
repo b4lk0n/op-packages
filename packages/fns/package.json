@@ -1,0 +1,57 @@
+{
+  "name": "op-fns",
+  "type": "module",
+  "sideEffects": false,
+  "version": "0.1.0",
+  "description": "OP: Functions",
+  "exports": {
+    "./func": "./dist/func/index.js",
+    "./option": "./dist/option/index.js",
+    "./result": "./dist/result/index.js",
+    "./async-result": "./dist/async-result/index.js"
+  },
+  "typesVersions": {
+    "*": {
+      "func": [
+        "dist/func/index.d.ts"
+      ],
+      "option": [
+        "dist/option/index.d.ts"
+      ],
+      "result": [
+        "dist/result/index.d.ts"
+      ],
+      "async-result": [
+        "dist/async-result/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/b4lk0n/op-packages.git"
+  },
+  "scripts": {
+    "lint": "eslint --ext .ts src",
+    "test": "vitest",
+    "build:types": "tsc --project tsconfig.types.json",
+    "build:compile": "swc src -d dist",
+    "build": "pnpm build:types && pnpm build:compile",
+    "dev": "tsc-watch --project tsconfig.types.json --onSuccess \"pnpm build:compile\""
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@swc/cli": "^0.1.62",
+    "@swc/core": "^1.3.90",
+    "@vitest/coverage-v8": "^0.34.5",
+    "eslint": "^8.50.0",
+    "eslint-config-op": "workspace:^",
+    "op-tsconfig": "workspace:^",
+    "prettier": "^3.0.3",
+    "tsc-watch": "^6.0.4",
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.5"
+  }
+}

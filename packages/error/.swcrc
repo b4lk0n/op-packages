@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json.schemastore.org/swcrc",
+
+  "exclude": [".test.ts"],
+
+  "module": {
+    "type": "es6"
+  },
+
+  "jsc": {
+    "target": "es2022",
+
+    "parser": {
+      "syntax": "typescript"
+    }
+  },
+
+  "minify": false
+}

@@ -1,0 +1,22 @@
+{
+  "name": "op-tsconfig",
+  "version": "0.1.0",
+  "description": "OP: TypeScript configuration",
+  "main": "src/tsconfig.json",
+  "files": [
+    "src/tsconfig.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/b4lk0n/op-packages.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "TypeScript",
+    "config",
+    "tsconfig"
+  ],
+  "devDependencies": {
+    "prettier": "^3.0.3"
+  }
+}
