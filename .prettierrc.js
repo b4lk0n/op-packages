@@ -1,1 +1,3 @@
-export { default } from 'op-prettier-config'
+const config = await import('op-prettier-config')
+
+export default config.default
