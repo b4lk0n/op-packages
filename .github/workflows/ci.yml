@@ -1,5 +1,7 @@
 name: CI
-on: [push, workflow_dispatch]
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
 
 jobs:
   publish:
@@ -15,11 +17,3 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm lint
       - run: pnpm test
-      - run: pnpm build
-      - uses: changesets/action@v1
-        with:
-          publish: yarn release
-          version: yarn version-packages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
