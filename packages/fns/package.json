@@ -2,7 +2,7 @@
   "name": "op-fns",
   "type": "module",
   "sideEffects": false,
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "OP: Functions",
   "exports": {
     "./func": "./dist/func/index.js",
