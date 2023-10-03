@@ -1,6 +1,6 @@
-import { describe, expect, it, vi } from "vitest";
+import { describe, expect, it, vi } from 'vitest'
 
-import { some } from "./some.js";
+import { some } from './some.js'
 import { tap } from './tap.js'
 
 describe('Option.tap', () => {

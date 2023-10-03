@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 
 import { err, ok } from '../result/index.js'
 
-import { flatMap,map, mapErr } from './map.js'
+import { flatMap, map, mapErr } from './map.js'
 
 describe('AsyncResult.map', () => {
   it('should map over an Ok<A> value', async () => {

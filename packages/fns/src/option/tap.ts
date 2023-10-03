@@ -1,6 +1,6 @@
-import { isSome } from "./some.js"
+import { isSome } from './some.js'
 
-import type { Option } from "./option.js"
+import type { Option } from './option.js'
 
 type Tapper<A> = (a: A) => unknown
 
@@ -12,5 +12,3 @@ export const tap =
     }
     return opt
   }
-
-
