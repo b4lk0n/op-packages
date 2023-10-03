@@ -4,7 +4,7 @@
   "description": "OP: TypeScript configuration",
   "main": "src/tsconfig.json",
   "files": [
-    "src/tsconfig.json"
+    "src"
   ],
   "repository": {
     "type": "git",
