@@ -12,7 +12,7 @@ describe('createError', () => {
     expect(error).toBeInstanceOf(AppError)
     expect(error).toBeInstanceOf(Error)
     expect(error.message).toBe('oops')
-    expect(error.unwrapped).toBe('oops')
+    expect(error.unwrap()).toBe('oops')
     expect(error.name).toBe('CustomError')
   })
 })

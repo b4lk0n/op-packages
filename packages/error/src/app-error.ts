@@ -1,5 +1,6 @@
 export class AppError extends Error {
   override cause?: AppError
+  data?: object
 
   static fromError(error: Error): AppError {
     const cause =
@@ -26,7 +27,7 @@ export class AppError extends Error {
     return new AppError(JSON.stringify(error))
   }
 
-  static create(message: string, cause?: AppError): AppError {
+  static create(message: string, cause?: unknown): AppError {
     return new AppError(message, cause)
   }
 
@@ -34,7 +35,7 @@ export class AppError extends Error {
     return message.trim().replaceAll(/\s+/g, ' ')
   }
 
-  constructor(message: string, cause?: AppError) {
+  constructor(message: string, cause?: unknown) {
     super(message)
 
     this.name = 'AppError'
@@ -44,28 +45,37 @@ export class AppError extends Error {
     }
   }
 
-  get flattened(): AppError[] {
-    const causes = this.cause?.flattened ?? []
+  setData(data: object): AppError {
+    this.data = data
+
+    return this
+  }
+
+  flatten(): AppError[] {
+    const causes = this.cause?.flatten() ?? []
 
     return [this, ...causes]
   }
 
-  wrap(cause: AppError): void {
-    this.cause = cause
+  wrap(cause: unknown): AppError {
+    this.cause = AppError.from(cause)
+
+    return this
   }
 
-  get unwrapped(): string {
+  unwrap(): string {
     const getErrorMessage = (error: AppError) => error.message
 
-    return this.flattened.map(getErrorMessage).join(': ')
+    return this.flatten().map(getErrorMessage).join(': ')
   }
 
   toJSON() {
     return {
       name: this.name,
       message: this.message,
+      data: this.data,
       stack: this.stack,
-      unwrapped: this.unwrapped,
+      unwrapped: this.unwrap(),
       cause: this.cause,
     }
   }
