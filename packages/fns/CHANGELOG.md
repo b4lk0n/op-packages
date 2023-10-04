@@ -1,5 +1,11 @@
 # op-fns
 
+## 0.3.1
+
+### Patch Changes
+
+- 45a0301: update deps
+
 ## 0.3.0
 
 ### Minor Changes
