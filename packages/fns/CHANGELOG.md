@@ -1,5 +1,16 @@
 # op-fns
 
+## 0.4.0
+
+### Minor Changes
+
+- f6ded42: add AsyncResult.tap function
+
+### Patch Changes
+
+- d66c04a: fix Result.tap export
+- 04649b0: fix Option.tap export
+
 ## 0.3.1
 
 ### Patch Changes
