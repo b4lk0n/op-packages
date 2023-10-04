@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
-    "eslint": "^8.49.0",
+    "eslint": "^8.50.0",
     "eslint-config-op": "workspace:^",
     "op-prettier-config": "workspace:^",
     "prettier": "^3.0.3",
