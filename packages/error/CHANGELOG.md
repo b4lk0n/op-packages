@@ -1,5 +1,11 @@
 # op-error
 
+## 0.1.4
+
+### Patch Changes
+
+- 6f1a191: slightly change op-error API
+
 ## 0.1.3
 
 ### Patch Changes
