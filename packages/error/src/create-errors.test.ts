@@ -18,8 +18,8 @@ describe('createErrors', () => {
     const { CustomError } = createErrors(['CustomError'])
 
     const err1 = new CustomError('err1')
-    const err2 = new CustomError('err2', err1)
-    expect(err2.unwrapped).toBe('err2: err1')
+    const err2 = new CustomError('err2').wrap(err1)
+    expect(err2.unwrap()).toBe('err2: err1')
   })
 
   it('should unwrap messages', () => {
@@ -30,9 +30,9 @@ describe('createErrors', () => {
     ])
 
     const err1 = new FirstError('first message')
-    const err2 = new SecondError('second message', err1)
-    const err3 = new ThirdError('third message', err2)
+    const err2 = new SecondError('second message').wrap(err1)
+    const err3 = new ThirdError('third message').wrap(err2)
 
-    expect(err3.unwrapped).toBe('third message: second message: first message')
+    expect(err3.unwrap()).toBe('third message: second message: first message')
   })
 })

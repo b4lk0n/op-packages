@@ -11,7 +11,7 @@ describe('AppError', () => {
     expect(error.name).toBe('AppError')
     expect(error.message).toBe('oops')
     expect(error.cause).toBeUndefined()
-    expect(error.unwrapped).toBe('oops')
+    expect(error.unwrap()).toBe('oops')
   })
 
   it('should create instance of AppError with cause', () => {
@@ -20,7 +20,7 @@ describe('AppError', () => {
     expect(error.message).toBe('oops')
     expect(error.cause).toBeInstanceOf(AppError)
     expect(error.cause).toBeInstanceOf(Error)
-    expect(error.unwrapped).toBe('oops: cause')
+    expect(error.unwrap()).toBe('oops: cause')
   })
 
   it('should create instance of AppError with nested cause', () => {
@@ -35,7 +35,7 @@ describe('AppError', () => {
     expect(error.cause).toBeInstanceOf(Error)
     expect(error.cause?.cause).toBeInstanceOf(AppError)
     expect(error.cause?.cause).toBeInstanceOf(Error)
-    expect(error.unwrapped).toBe('oops: cause: nested cause')
+    expect(error.unwrap()).toBe('oops: cause: nested cause')
   })
 
   it('should create instance of AppError and wrap a cause', () => {
@@ -49,7 +49,7 @@ describe('AppError', () => {
     expect(error.message).toBe('oops')
     expect(error.cause).toBeInstanceOf(AppError)
     expect(error.cause).toBeInstanceOf(Error)
-    expect(error.unwrapped).toBe('oops: cause')
+    expect(error.unwrap()).toBe('oops: cause')
   })
 
   it('should create instance of AppError from native Error', () => {
@@ -98,5 +98,38 @@ describe('AppError', () => {
         cause: undefined,
       },
     })
+  })
+
+  it('should create instance of AppError with data', () => {
+    const error = new AppError('oops').setData({ foo: 'bar' })
+
+    expect(error).toBeInstanceOf(AppError)
+    expect(error).toBeInstanceOf(Error)
+    expect(error.message).toBe('oops')
+    expect(error.data).toEqual({ foo: 'bar' })
+  })
+
+  it('should create instance of AppError with data and cause', () => {
+    const cause = new Error('cause')
+    const error = new AppError('oops', cause).setData({ foo: 'bar' })
+
+    expect(error).toBeInstanceOf(AppError)
+    expect(error).toBeInstanceOf(Error)
+    expect(error.message).toBe('oops')
+    expect(error.data).toEqual({ foo: 'bar' })
+    expect(error.cause).toBeInstanceOf(AppError)
+    expect(error.cause).toBeInstanceOf(Error)
+    expect(error.unwrap()).toBe('oops: cause')
+  })
+
+  it('should create an AppError with an unknown cause', () => {
+    const cause: unknown = new Error('cause')
+    const error = new AppError('oops', cause)
+
+    expect(error).toBeInstanceOf(AppError)
+    expect(error).toBeInstanceOf(Error)
+    expect(error.message).toBe('oops')
+    expect(error.cause).toBeInstanceOf(AppError)
+    expect(error.unwrap()).toBe('oops: cause')
   })
 })
