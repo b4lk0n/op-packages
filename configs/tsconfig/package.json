@@ -2,7 +2,10 @@
   "name": "op-tsconfig",
   "version": "0.2.0",
   "description": "OP: TypeScript configuration",
-  "main": "src/tsconfig.json",
+  "main": "src/base.json",
+  "exports": {
+    ".": "./src/base.json"
+  },
   "files": [
     "src"
   ],
