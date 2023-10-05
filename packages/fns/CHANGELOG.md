@@ -1,5 +1,11 @@
 # op-fns
 
+## 0.4.1
+
+### Patch Changes
+
+- 238b1bd: fix tsconfig export
+
 ## 0.4.0
 
 ### Minor Changes

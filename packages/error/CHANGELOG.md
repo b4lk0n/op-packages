@@ -1,5 +1,11 @@
 # op-error
 
+## 0.1.5
+
+### Patch Changes
+
+- 238b1bd: fix tsconfig export
+
 ## 0.1.4
 
 ### Patch Changes
