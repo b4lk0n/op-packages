@@ -1,5 +1,10 @@
 module.exports = {
-  extends: ['prettier', 'eslint:recommended', 'plugin:vitest/recommended'],
+  extends: [
+    'prettier',
+    'eslint:recommended',
+    'plugin:vitest/recommended',
+    'turbo',
+  ],
 
   plugins: ['import', 'simple-import-sort'],
 
