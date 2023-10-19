@@ -1,13 +1,13 @@
 {
   "name": "op-tsconfig",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "OP: TypeScript configuration",
-  "main": "src/base.json",
+  "main": "base.json",
   "exports": {
-    ".": "./src/base.json"
+    ".": "./base.json"
   },
   "files": [
-    "src"
+    "base.json"
   ],
   "repository": {
     "type": "git",
