@@ -1,5 +1,11 @@
 # eslint-config-op
 
+## 0.3.0
+
+### Minor Changes
+
+- eab8fa9: Remove next/babel from extends
+
 ## 0.2.0
 
 ### Minor Changes
