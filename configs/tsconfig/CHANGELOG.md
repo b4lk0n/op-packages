@@ -1,5 +1,11 @@
 # op-tsconfig
 
+## 0.4.0
+
+### Minor Changes
+
+- a2a5964: fix exporting
+
 ## 0.3.0
 
 ### Minor Changes
